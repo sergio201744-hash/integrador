@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pagina principal</title>
+</head>
+<body>
+<header>
+	<nav class="navbar">
+		<a href="index.html">Inicio</a>
+		<a href="articulo.html">Articulo</a>
+		<a href="contacto.html">Contacto</a>
+	</nav>
+</header> 
+
+<main>
+	<h1>Bienvenido a mi sito Web</h1>
+	<h1>Trabajo Práctico Integrador</h1>
+<p>
+  Este sitio web fue desarrollado como parte del Trabajo Práctico Integrador de la materia. Está compuesto por tres páginas principales conectadas mediante un menú de navegación utilizando Flexbox.
+</p>
+<p>
+  En la página de inicio se encuentra esta información general junto a un carrusel de imágenes programado en JavaScript, utilizando arrays y botones para avanzar y retroceder de forma circular.
+</p>
+<p>
+  En la sección "Artículo", se presenta una disposición de contenido en múltiples columnas utilizando Flexbox, simulando una galería de productos o servicios.
+</p>
+<p>
+  Por último, en la página de "Contacto" se encuentra un formulario con validaciones personalizadas en JavaScript. Se verifican campos obligatorios, formato de email y teléfono mediante expresiones regulares, y se muestran errores o los datos ingresados directamente en la página sin usar alertas nativas.
+</p>
+<p>
+  Todo el sitio fue desarrollado con HTML, CSS y JavaScript sin utilizar frameworks ni bibliotecas externas, y se encuentra subido en GitHub con despliegue a través de GitHub Pages.
+</p>
+ 
+ <section id="carrusel">
+ 	<button onclick="anterior()">⏪</button>
+ 	<img id="imagen" src="paisaje.jpg" alt="Imagen Carrusel">
+ 	<button onclick="siguiente()">⏩</button>
+ </section>
+</main>
+
+<script>
+const imagenes = ["paisaje.jpg","pan.png","shadow.jpg"]  
+
+let indice = 0;
+
+function mostrarImagen(){
+	document.getElementById("imagen").src = imagenes[indice];
+}
+
+function siguiente(){
+	indice = (indice + 1) % imagenes.length;
+	mostrarImagen();
+}
+
+function anterior(){
+	indice = (indice - 1 + imagenes.length) % imagenes.length ;
+	mostrarImagen();
+}
+
+ mostrarImagen();
+</script>
+</body>
+</html>
