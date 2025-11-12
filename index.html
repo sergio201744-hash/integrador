@@ -3,7 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Pagina principal</title>
+	<title>Pagina principal</title> 
+	<script src="carrusel.js"></script>
 </head>
 <body>
 <header>
@@ -39,27 +40,5 @@
  	<button onclick="siguiente()">⏩</button>
  </section>
 </main>
-
-<script>
-const imagenes = ["paisaje.jpg","pan.png","shadow.jpg"]  
-
-let indice = 0;
-
-function mostrarImagen(){
-	document.getElementById("imagen").src = imagenes[indice];
-}
-
-function siguiente(){
-	indice = (indice + 1) % imagenes.length;
-	mostrarImagen();
-}
-
-function anterior(){
-	indice = (indice - 1 + imagenes.length) % imagenes.length ;
-	mostrarImagen();
-}
-
- mostrarImagen();
-</script>
 </body>
 </html>
