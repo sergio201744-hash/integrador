@@ -1,0 +1,138 @@
+/* 🌿 Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* 🌸 Fondo general y texto */
+body {
+    background-color: #f9fafb;
+    color: #333;
+    line-height: 1.8;
+    padding: 0;
+}
+
+/* 🌼 Header y Navbar */
+header {
+    background-color: #4CAF50;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.navbar a:hover {
+    background-color: white;
+    color: #4CAF50;
+    transform: scale(1.05);
+}
+
+/* 🌷 Título principal */
+main h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2E7D32;
+    font-size: 2em;
+}
+
+/* 🌼 Párrafo introductorio */
+.intro {
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
+    text-align: justify;
+    font-size: 1.1rem;
+    color: #444;
+    background: #ffffff;
+    border-left: 6px solid #4CAF50;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* 🌿 Contenedor de artículos */
+.contenedor-articulos {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 0 15px;
+}
+
+/* 🌸 Cada sección del artículo */
+.articulo {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    flex: 1 1 300px;
+    max-width: 350px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.articulo h2 {
+    margin-bottom: 12px;
+    color: #2E7D32;
+    font-size: 1.3rem;
+}
+
+.articulo p {
+    color: #555;
+    text-align: justify;
+}
+
+/* 💫 Efecto hover en las tarjetas */
+.articulo:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* 🌻 Párrafo de conclusión */
+.conclusion {
+    max-width: 900px;
+    margin: 40px auto 60px auto;
+    padding: 20px;
+    text-align: justify;
+    font-size: 1.1rem;
+    background: #e8f5e9;
+    border-radius: 8px;
+    border-left: 6px solid #2E7D32;
+    color: #333;
+}
+
+/* 📱 Diseño responsive */
+@media (max-width: 768px) {
+    .contenedor-articulos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .articulo {
+        max-width: 90%;
+    }
+
+    .intro, .conclusion {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+
+    main h1 {
+        font-size: 1.6em;
+    }
+}
