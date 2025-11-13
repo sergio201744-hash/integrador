@@ -21,15 +21,15 @@ formulario.addEventListener("submit", function (e) {
   let valido = true;
 
   // Validar nombre
-  if (nombre === "") {
-    const error = document.getElementById("error-nombre");
-    error.textContent = "El nombre es obligatorio.";
-    error.style.display = "block";
-    error.style.color = "#d33";
-    error.style.marginTop = "6px";
-    error.style.marginBottom = "10px";
-    valido = false;
-  }
+  if (nombre.length === 0 || nombre.length > 30) {
+  const error = document.getElementById("error-nombre");
+  error.textContent = "El nombre debe tener entre 1 y 30 caracteres.";
+  error.style.display = "block";
+  error.style.color = "#d33";
+  error.style.marginTop = "6px";
+  error.style.marginBottom = "10px";
+  valido = false;
+}
 
   // Validar email
   if (!emailRegex.test(email)) {
