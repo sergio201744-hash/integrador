@@ -7,7 +7,10 @@ formulario.addEventListener("submit", function (e) {
   document.getElementById("error-nombre").textContent = "";
   document.getElementById("error-email").textContent = "";
   document.getElementById("error-telefono").textContent = "";
-  document.getElementById("resultado").innerHTML = "";
+
+  const resultado = document.getElementById("resultado");
+  resultado.innerHTML = "";      // Limpia contenido previo
+  resultado.style.display = "none"; // Oculta el cuadro antes de validar
 
   // Captura valores
   const nombre = document.getElementById("nombre").value.trim();
@@ -22,14 +25,14 @@ formulario.addEventListener("submit", function (e) {
 
   // Validar nombre
   if (nombre.length === 0 || nombre.length > 30) {
-  const error = document.getElementById("error-nombre");
-  error.textContent = "El nombre debe tener entre 1 y 30 caracteres.";
-  error.style.display = "block";
-  error.style.color = "#d33";
-  error.style.marginTop = "6px";
-  error.style.marginBottom = "10px";
-  valido = false;
-}
+    const error = document.getElementById("error-nombre");
+    error.textContent = "El nombre debe tener entre 1 y 30 caracteres.";
+    error.style.display = "block";
+    error.style.color = "#d33";
+    error.style.marginTop = "6px";
+    error.style.marginBottom = "10px";
+    valido = false;
+  }
 
   // Validar email
   if (!emailRegex.test(email)) {
@@ -55,7 +58,7 @@ formulario.addEventListener("submit", function (e) {
 
   // Si todo está bien, mostrar los datos
   if (valido) {
-    const resultado = document.getElementById("resultado");
+    resultado.style.display = "block"; // <-- HACE QUE APAREZCA EL CUADRO VERDE
 
     const titulo = document.createElement("h2");
     titulo.textContent = "Datos enviados:";
